@@ -29,7 +29,7 @@ This file will shut down after 1h, and has a anti-concurrency mechanism built in
 
 One way to handle this is by running a cron task each minute with something like:
 ```
-* * * * * root cd /var/www/domain.com/mowallet-api && export generate=true && php blockchain.php
+*/2 * * * * root cd /var/www/domain.com/webwallet-js-api && php cronjob.php
 ```
 
 ### Donate

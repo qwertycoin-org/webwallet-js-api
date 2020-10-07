@@ -13,11 +13,9 @@
 
 include 'config/config.php';
 
-if(!empty($_GET["gen"]) && $_GET['gen'] == "1"){
-  putenv("generate=true");
-} else {
-  putenv("generate=false");
-}
+putenv("generate=true");
+
+$overwriteHeight = 0; // for start at 0
 
 function getTxWithHashes($txHashes){
 	global $rpcPort;
@@ -51,7 +49,7 @@ function getBlockchainHeight(){
 }
 
 
-$outCount = 0;//to start at 0
+$outCount = $overwriteHeight;
 
 function createOptimizedBock($startHeight, $endHeight){
 	global $outCount;
@@ -202,9 +200,9 @@ if(getenv('generate') !== 'true'){
 		exit;
 	file_put_contents('./config/lastRun.txt', time());
 	
-	$lastScanHeight = 0;
+	$lastScanHeight = $overwriteHeight;
 	$timeStart = time();
-	$lastOutCount = 0;
+	$lastOutCount = $overwriteHeight;
 	while(time() - $timeStart < 59*60){
 		$blockchainHeight = getBlockchainHeight();
 		$lastBlockCacheContent = null;

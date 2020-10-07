@@ -11,17 +11,13 @@
 // License for more details.
 //
 
-include 'nodesList.php';
-
 header("Access-Control-Allow-Origin: *");
 
 ini_set('display_errors', 0);
 ini_set('display_startup_errors', 0);
 error_reporting(0);
 
-$randNode = array_rand($nodesList, 2);
-
 $cacheLocation = 'cache';
-$daemonAddress = $nodesList[$randNode[0]];
+$daemonAddress = '127.0.0.1';
 $rpcPort = 8197;
 $coinSymbol = 'QWC';

@@ -1,3 +1,11 @@
+> [!CAUTION]
+> **ARCHIVED LEGACY WALLET BACKEND — DO NOT DEPLOY OR EXPOSE.**
+> This API predates Qwertycoin v2 and the current restricted-RPC gateway model.
+> Do not connect it to a production daemon or funded wallet, and do not reuse
+> its endpoint or credential examples. Use the maintained
+> [Web Wallet source](https://github.com/qwertycoin-org/wallet.qwertycoin.org)
+> and current [integration documentation](https://docs.qwertycoin.org/).
+
 ![image](https://cdn.qwertycoin.org/images/press/other/qwc-github-3.png)
 
 # Qwertycoin's Mobile- and Web Wallet API endpoint
